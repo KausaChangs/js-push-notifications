@@ -4,8 +4,9 @@ button.addEventListener("click", () => {
   Notification.requestPermission().then((perm) => {
     if (perm === "granted") {
       const notification = new Notification("Example Notification", {
-        body: "this is more text",
+        body: Math.random(),
         data: "world",
+        tag: "welcome text",
       });
 
       notification.addEventListener("close", (e) => {
