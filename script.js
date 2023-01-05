@@ -18,12 +18,20 @@ button.addEventListener("click", () => {
 
 let notification;
 
+let interval;
+
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "hidden") {
-    notification = new Notification("come back please", {
-      body: "PLEASE",
-      tag: "COME BACK",
-    });
+    const leaveDate = new Date();
+
+    setInterval(() => {
+      notification = new Notification("come back please", {
+        body: `You  were gone for ${
+          Math.round(new Date() - leaveDate) / 1000
+        } seconds`,
+        tag: "COME BACK",
+      });
+    }, 100);
   } else {
     notification.close();
   }
