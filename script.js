@@ -26,9 +26,9 @@ document.addEventListener("visibilitychange", () => {
 
     setInterval(() => {
       notification = new Notification("come back please", {
-        body: `You  were gone for ${
-          Math.round(new Date() - leaveDate) / 1000
-        } seconds`,
+        body: `You  were gone for ${Math.round(
+          new Date() - leaveDate / 1000
+        )} seconds`,
         tag: "COME BACK",
       });
     }, 100);
