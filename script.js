@@ -16,11 +16,15 @@ button.addEventListener("click", () => {
   });
 });
 
+let notification;
+
 document.addEventListener("visibilitychange", () => {
   if (document.visibilityState === "hidden") {
-    new Notification("come back please", {
+    notification = new Notification("come back please", {
       body: "PLEASE",
       tag: "COME BACK",
     });
+  } else {
+    notification.close();
   }
 });
